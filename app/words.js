@@ -10,5 +10,12 @@ const words = {
   for(var i in repl){
     obj[repl[i]] = 1;
   }
+  //Filter every element to count number of occurence
+  var ans = repl.filter(function(a,b){
+    if(repl.indexOf(a) !== b){
+      obj[a] += 1;
+    }
+  });
+  
 }
 }
