@@ -1,9 +1,17 @@
 'use strict'
 const words = {
   words: function(str){
-  const obj = {};
+  	if(str === '') {
+  		var msg = "No String to Perform Operation On";
+  		return msg;
+  	} else if(typeof(str) !== "string") {
+  		var msg = "Invalid Input";
+  		return msg;
+  	}
+  var obj = {};
   //Replace every \n \t with a space
-  const repl = str.replace(/[\n\t]/g, " " );
+  var repl = str.replace(/[\n\t]/g, " " );
+  repl = repl.replace(/\s\s+/g, " " );
   //Split every word by a space
   repl = repl.split(" ");
   //Push every element in the array into the obj
@@ -16,6 +24,7 @@ const words = {
       obj[a] += 1;
     }
   });
-  
+  return obj;
 }
 }
+module.exports = words;
