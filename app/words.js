@@ -1,6 +1,6 @@
 'use strict'
 const words = {
-  words: function(str){
+  words(str) {
   	if(str === '') {
   		var msg = "No String to Perform Operation On";
   		return msg;
